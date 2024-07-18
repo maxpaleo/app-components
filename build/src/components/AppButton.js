@@ -18,7 +18,7 @@ exports.AppButton = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
 const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
-const button_1 = require("@/components/ui/button");
+const button_1 = require("./shadcn/button");
 const AppButton = (_a) => {
     var { icon, loading = false, size, children, disabled, label, screenReaderText, roleRestrictions, userRole, asChild } = _a, rest = __rest(_a, ["icon", "loading", "size", "children", "disabled", "label", "screenReaderText", "roleRestrictions", "userRole", "asChild"]);
     const selectedIcon = icon;

@@ -6,7 +6,7 @@ declare const Command: React.ForwardRefExoticComponent<Omit<{
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>> & {
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>> & {
     label?: string;
     shouldFilter?: boolean;
     filter?: (value: string, search: string, keywords?: string[]) => number;
@@ -19,12 +19,12 @@ declare const Command: React.ForwardRefExoticComponent<Omit<{
 } & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 interface CommandDialogProps extends DialogProps {
 }
-declare const CommandDialog: ({ children, ...props }: CommandDialogProps) => React.JSX.Element;
+declare const CommandDialog: ({ children, ...props }: CommandDialogProps) => import("react/jsx-runtime").JSX.Element;
 declare const CommandInput: React.ForwardRefExoticComponent<Omit<Omit<Pick<Pick<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "key" | keyof React.InputHTMLAttributes<HTMLInputElement>> & {
     ref?: React.Ref<HTMLInputElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.InputHTMLAttributes<HTMLInputElement>>, "type" | "onChange" | "value"> & {
+}, "asChild" | "key" | keyof React.InputHTMLAttributes<HTMLInputElement>>, "type" | "value" | "onChange"> & {
     value?: string;
     onValueChange?: (search: string) => void;
 } & React.RefAttributes<HTMLInputElement>, "ref"> & React.RefAttributes<HTMLInputElement>>;
@@ -34,7 +34,7 @@ declare const CommandList: React.ForwardRefExoticComponent<Omit<{
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>> & {
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>> & {
     label?: string;
 } & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 declare const CommandEmpty: React.ForwardRefExoticComponent<Omit<{
@@ -43,14 +43,14 @@ declare const CommandEmpty: React.ForwardRefExoticComponent<Omit<{
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>> & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>> & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 declare const CommandGroup: React.ForwardRefExoticComponent<Omit<{
     children?: React.ReactNode;
 } & Omit<Pick<Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "key" | keyof React.HTMLAttributes<HTMLDivElement>> & {
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>>, "value" | "heading"> & {
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>>, "value" | "heading"> & {
     heading?: React.ReactNode;
     value?: string;
     forceMount?: boolean;
@@ -59,7 +59,7 @@ declare const CommandSeparator: React.ForwardRefExoticComponent<Omit<Pick<Pick<R
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>> & {
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>> & {
     alwaysRender?: boolean;
 } & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 declare const CommandItem: React.ForwardRefExoticComponent<Omit<{
@@ -68,7 +68,7 @@ declare const CommandItem: React.ForwardRefExoticComponent<Omit<{
     ref?: React.Ref<HTMLDivElement>;
 } & {
     asChild?: boolean;
-}, "key" | "asChild" | keyof React.HTMLAttributes<HTMLDivElement>>, "onSelect" | "value" | "disabled"> & {
+}, "asChild" | "key" | keyof React.HTMLAttributes<HTMLDivElement>>, "disabled" | "value" | "onSelect"> & {
     disabled?: boolean;
     onSelect?: (value: string) => void;
     value?: string;
@@ -76,7 +76,7 @@ declare const CommandItem: React.ForwardRefExoticComponent<Omit<{
     forceMount?: boolean;
 } & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 declare const CommandShortcut: {
-    ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>): React.JSX.Element;
+    ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>): import("react/jsx-runtime").JSX.Element;
     displayName: string;
 };
 export { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator, };

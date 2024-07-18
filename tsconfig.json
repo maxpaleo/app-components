@@ -9,11 +9,10 @@
     "outDir": "./build",
     "module": "commonJS",
     "target": "es6",
-    // "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
