@@ -1,6 +1,6 @@
 {
   "name": "@maxpp/app-components",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "dev": "next dev",
     "build": "tsc",
@@ -8,6 +8,9 @@
     "lint": "next lint",
     "postinstall": "node build/src/createConfig.js"
   },
+  "files": [
+    "build/src/**/*"
+  ],
   "publishConfig": {
     "access": "public"
   },
