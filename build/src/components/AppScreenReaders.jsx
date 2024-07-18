@@ -1,8 +1,13 @@
-import { cn } from "@/lib/utils";
-import React from "react";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var utils_1 = require("@/lib/utils");
+var react_1 = __importDefault(require("react"));
 var SRInputLabel = function (_a) {
     var blockId = _a.blockId, label = _a.label;
-    return (<label htmlFor={cn("i-", blockId)} className="sr-only">
+    return (<label htmlFor={(0, utils_1.cn)("i-", blockId)} className="sr-only">
       {label}
     </label>);
 };
@@ -37,4 +42,4 @@ var SR = {
     Button: SRButton,
     Link: SRLink,
 };
-export default SR;
+exports.default = SR;

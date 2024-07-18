@@ -1,3 +1,4 @@
+"use strict";
 "use client";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
@@ -10,22 +11,24 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport, } from "@/components/ui/toast";
-import { useToast } from "@/components/ui/use-toast";
-export function Toaster() {
-    var toasts = useToast().toasts;
-    return (<ToastProvider>
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Toaster = Toaster;
+var toast_1 = require("@/components/ui/toast");
+var use_toast_1 = require("@/components/ui/use-toast");
+function Toaster() {
+    var toasts = (0, use_toast_1.useToast)().toasts;
+    return (<toast_1.ToastProvider>
       {toasts.map(function (_a) {
             var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest(_a, ["id", "title", "description", "action"]);
-            return (<Toast key={id} {...props}>
+            return (<toast_1.Toast key={id} {...props}>
             <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
-              {description && (<ToastDescription>{description}</ToastDescription>)}
+              {title && <toast_1.ToastTitle>{title}</toast_1.ToastTitle>}
+              {description && (<toast_1.ToastDescription>{description}</toast_1.ToastDescription>)}
             </div>
             {action}
-            <ToastClose />
-          </Toast>);
+            <toast_1.ToastClose />
+          </toast_1.Toast>);
         })}
-      <ToastViewport />
-    </ToastProvider>);
+      <toast_1.ToastViewport />
+    </toast_1.ToastProvider>);
 }

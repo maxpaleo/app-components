@@ -1,3 +1,4 @@
+"use strict";
 "use client";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
@@ -10,12 +11,14 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { useTheme } from "next-themes";
-import { Toaster as Sonner } from "sonner";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Toaster = void 0;
+var next_themes_1 = require("next-themes");
+var sonner_1 = require("sonner");
 var Toaster = function (_a) {
     var props = __rest(_a, []);
-    var _b = useTheme().theme, theme = _b === void 0 ? "system" : _b;
-    return (<Sonner theme={theme} className="toaster group" toastOptions={{
+    var _b = (0, next_themes_1.useTheme)().theme, theme = _b === void 0 ? "system" : _b;
+    return (<sonner_1.Toaster theme={theme} className="toaster group" toastOptions={{
             classNames: {
                 toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
                 description: "group-[.toast]:text-muted-foreground",
@@ -24,4 +27,4 @@ var Toaster = function (_a) {
             },
         }} {...props}/>);
 };
-export { Toaster };
+exports.Toaster = Toaster;

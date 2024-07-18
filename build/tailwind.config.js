@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var config = {
     darkMode: ["class"],
     content: [
@@ -74,4 +76,4 @@ var config = {
     },
     plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
-export default config;
+exports.default = config;

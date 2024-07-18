@@ -1,7 +1,10 @@
+"use strict";
 "use client";
-import { ComponentPreview } from "@/components/ComponentPreview";
-export default function DemoPage() {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = DemoPage;
+var ComponentPreview_1 = require("@/components/ComponentPreview");
+function DemoPage() {
     return (<main className="flex min-h-screen gap-4 flex-col items-center p-24">
-      <ComponentPreview />
+      <ComponentPreview_1.ComponentPreview />
     </main>);
 }

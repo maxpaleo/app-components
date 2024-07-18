@@ -1,3 +1,4 @@
+"use strict";
 "use client";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -10,6 +11,29 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -21,23 +45,27 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { Controller, FormProvider, useFormContext, } from "react-hook-form";
-import { cn } from "@/lib/utils";
-import { Label } from "@/components/ui/label";
-var Form = FormProvider;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormField = exports.FormMessage = exports.FormDescription = exports.FormControl = exports.FormLabel = exports.FormItem = exports.Form = exports.useFormField = void 0;
+var React = __importStar(require("react"));
+var react_slot_1 = require("@radix-ui/react-slot");
+var react_hook_form_1 = require("react-hook-form");
+var utils_1 = require("@/lib/utils");
+var label_1 = require("@/components/ui/label");
+var Form = react_hook_form_1.FormProvider;
+exports.Form = Form;
 var FormFieldContext = React.createContext({});
 var FormField = function (_a) {
     var props = __rest(_a, []);
     return (<FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props}/>
+      <react_hook_form_1.Controller {...props}/>
     </FormFieldContext.Provider>);
 };
+exports.FormField = FormField;
 var useFormField = function () {
     var fieldContext = React.useContext(FormFieldContext);
     var itemContext = React.useContext(FormItemContext);
-    var _a = useFormContext(), getFieldState = _a.getFieldState, formState = _a.formState;
+    var _a = (0, react_hook_form_1.useFormContext)(), getFieldState = _a.getFieldState, formState = _a.formState;
     var fieldState = getFieldState(fieldContext.name, formState);
     if (!fieldContext) {
         throw new Error("useFormField should be used within <FormField>");
@@ -45,34 +73,39 @@ var useFormField = function () {
     var id = itemContext.id;
     return __assign({ id: id, name: fieldContext.name, formItemId: "".concat(id, "-form-item"), formDescriptionId: "".concat(id, "-form-item-description"), formMessageId: "".concat(id, "-form-item-message") }, fieldState);
 };
+exports.useFormField = useFormField;
 var FormItemContext = React.createContext({});
 var FormItem = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
     var id = React.useId();
     return (<FormItemContext.Provider value={{ id: id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props}/>
+      <div ref={ref} className={(0, utils_1.cn)("space-y-2", className)} {...props}/>
     </FormItemContext.Provider>);
 });
+exports.FormItem = FormItem;
 FormItem.displayName = "FormItem";
 var FormLabel = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
     var _b = useFormField(), error = _b.error, formItemId = _b.formItemId;
-    return (<Label ref={ref} className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...props}/>);
+    return (<label_1.Label ref={ref} className={(0, utils_1.cn)(error && "text-destructive", className)} htmlFor={formItemId} {...props}/>);
 });
+exports.FormLabel = FormLabel;
 FormLabel.displayName = "FormLabel";
 var FormControl = React.forwardRef(function (_a, ref) {
     var props = __rest(_a, []);
     var _b = useFormField(), error = _b.error, formItemId = _b.formItemId, formDescriptionId = _b.formDescriptionId, formMessageId = _b.formMessageId;
-    return (<Slot ref={ref} id={formItemId} aria-describedby={!error
+    return (<react_slot_1.Slot ref={ref} id={formItemId} aria-describedby={!error
             ? "".concat(formDescriptionId)
             : "".concat(formDescriptionId, " ").concat(formMessageId)} aria-invalid={!!error} {...props}/>);
 });
+exports.FormControl = FormControl;
 FormControl.displayName = "FormControl";
 var FormDescription = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
     var formDescriptionId = useFormField().formDescriptionId;
-    return (<p ref={ref} id={formDescriptionId} className={cn("text-sm text-muted-foreground", className)} {...props}/>);
+    return (<p ref={ref} id={formDescriptionId} className={(0, utils_1.cn)("text-sm text-muted-foreground", className)} {...props}/>);
 });
+exports.FormDescription = FormDescription;
 FormDescription.displayName = "FormDescription";
 var FormMessage = React.forwardRef(function (_a, ref) {
     var className = _a.className, children = _a.children, props = __rest(_a, ["className", "children"]);
@@ -81,9 +114,9 @@ var FormMessage = React.forwardRef(function (_a, ref) {
     if (!body) {
         return null;
     }
-    return (<p ref={ref} id={formMessageId} className={cn("text-sm font-medium text-destructive", className)} {...props}>
+    return (<p ref={ref} id={formMessageId} className={(0, utils_1.cn)("text-sm font-medium text-destructive", className)} {...props}>
       {body}
     </p>);
 });
+exports.FormMessage = FormMessage;
 FormMessage.displayName = "FormMessage";
-export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField, };
