@@ -15,3 +15,11 @@ components.json
 build/app/*
 build/lib/*
 build/components/*
+build/data/*
+build/tailwind*
+build/tsconfig*
+build/app-config*
+next*
+postcss*
+tailwind*
+app-config*
