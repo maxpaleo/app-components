@@ -3,22 +3,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = require("@/lib/utils");
-var react_1 = __importDefault(require("react"));
-var SRInputLabel = function (_a) {
-    var blockId = _a.blockId, label = _a.label;
+const utils_1 = require("@/lib/utils");
+const react_1 = __importDefault(require("react"));
+const SRInputLabel = ({ blockId, label }) => {
     return (<label htmlFor={(0, utils_1.cn)("i-", blockId)} className="sr-only">
       {label}
     </label>);
 };
-var SRButton = function (_a) {
-    var label = _a.label, onClick = _a.onClick;
-    return (<button onClick={onClick} className="sr-only" aria-label={"".concat(label, " button")}>
+const SRButton = ({ label, onClick }) => {
+    return (<button onClick={onClick} className="sr-only" aria-label={`${label} button`}>
       {label}
     </button>);
 };
-var SRLink = function (_a) {
-    var href = _a.href, label = _a.label;
+const SRLink = ({ href, label }) => {
     return (<a href={href} className="sr-only">
       {label}
     </a>);
@@ -37,7 +34,7 @@ var SRLink = function (_a) {
  *  <SR.InputLabel blockId={blockId} label={params.label} />
  * ```
  */
-var SR = {
+const SR = {
     InputLabel: SRInputLabel,
     Button: SRButton,
     Link: SRLink,

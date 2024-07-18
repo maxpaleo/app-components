@@ -4,16 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ComponentPreview = void 0;
-var AppButton_1 = require("@/src/components/AppButton");
-var AppNavLink_1 = require("@/src/components/AppNavLink");
-var react_markdown_1 = __importDefault(require("react-markdown"));
-var image_1 = __importDefault(require("next/image"));
-var collapsible_1 = require("./ui/collapsible");
-var lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
-var doc_data_1 = require("@/data/doc-data");
-var tabs_1 = require("./ui/tabs");
-var ComponentCard = function (_a) {
-    var _b = _a.title, title = _b === void 0 ? "Title" : _b, children = _a.children, _c = _a.description, description = _c === void 0 ? "Description" : _c, markdown = _a.markdown, markdownCode = _a.markdownCode, image = _a.image, badgeText = _a.badgeText;
+const AppButton_1 = require("@/src/components/AppButton");
+const AppNavLink_1 = require("@/src/components/AppNavLink");
+const react_markdown_1 = __importDefault(require("react-markdown"));
+const image_1 = __importDefault(require("next/image"));
+const collapsible_1 = require("./ui/collapsible");
+const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
+const doc_data_1 = require("@/data/doc-data");
+const tabs_1 = require("./ui/tabs");
+const ComponentCard = ({ title = "Title", children, description = "Description", markdown, markdownCode, image, badgeText, }) => {
     return (<div className="bg-background flex flex-col gap-4 rounded-lg border p-4 w-full">
       <div>
         <div className="text-lg font-bold mb-2">{title}</div>
@@ -62,7 +61,7 @@ var ComponentCard = function (_a) {
       </div>
     </div>);
 };
-var ComponentPreview = function (_a) {
+const ComponentPreview = ({}) => {
     return (<>
       <div className="z-10 p-6 rounded-lg flex flex-col gap-4 bg-background w-full max-w-xl items-center justify-between font-mono text-sm lg:flex">
         <react_markdown_1.default className="prose dark:prose-invert">

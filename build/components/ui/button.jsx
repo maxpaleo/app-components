@@ -35,11 +35,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buttonVariants = exports.Button = void 0;
-var React = __importStar(require("react"));
-var react_slot_1 = require("@radix-ui/react-slot");
-var class_variance_authority_1 = require("class-variance-authority");
-var utils_1 = require("@/lib/utils");
-var buttonVariants = (0, class_variance_authority_1.cva)("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", {
+const React = __importStar(require("react"));
+const react_slot_1 = require("@radix-ui/react-slot");
+const class_variance_authority_1 = require("class-variance-authority");
+const utils_1 = require("@/lib/utils");
+const buttonVariants = (0, class_variance_authority_1.cva)("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", {
     variants: {
         variant: {
             default: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -62,10 +62,10 @@ var buttonVariants = (0, class_variance_authority_1.cva)("inline-flex items-cent
     },
 });
 exports.buttonVariants = buttonVariants;
-var Button = React.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest(_a, ["className", "variant", "size", "asChild"]);
-    var Comp = asChild ? react_slot_1.Slot : "button";
-    return (<Comp className={(0, utils_1.cn)(buttonVariants({ variant: variant, size: size, className: className }))} ref={ref} {...props}/>);
+const Button = React.forwardRef((_a, ref) => {
+    var { className, variant, size, asChild = false } = _a, props = __rest(_a, ["className", "variant", "size", "asChild"]);
+    const Comp = asChild ? react_slot_1.Slot : "button";
+    return (<Comp className={(0, utils_1.cn)(buttonVariants({ variant, size, className }))} ref={ref} {...props}/>);
 });
 exports.Button = Button;
 Button.displayName = "Button";

@@ -13,11 +13,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Toaster = void 0;
-var next_themes_1 = require("next-themes");
-var sonner_1 = require("sonner");
-var Toaster = function (_a) {
+const next_themes_1 = require("next-themes");
+const sonner_1 = require("sonner");
+const Toaster = (_a) => {
     var props = __rest(_a, []);
-    var _b = (0, next_themes_1.useTheme)().theme, theme = _b === void 0 ? "system" : _b;
+    const { theme = "system" } = (0, next_themes_1.useTheme)();
     return (<sonner_1.Toaster theme={theme} className="toaster group" toastOptions={{
             classNames: {
                 toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",

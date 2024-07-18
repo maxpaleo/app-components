@@ -36,11 +36,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Separator = void 0;
-var React = __importStar(require("react"));
-var SeparatorPrimitive = __importStar(require("@radix-ui/react-separator"));
-var utils_1 = require("@/lib/utils");
-var Separator = React.forwardRef(function (_a, ref) {
-    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest(_a, ["className", "orientation", "decorative"]);
+const React = __importStar(require("react"));
+const SeparatorPrimitive = __importStar(require("@radix-ui/react-separator"));
+const utils_1 = require("@/lib/utils");
+const Separator = React.forwardRef((_a, ref) => {
+    var { className, orientation = "horizontal", decorative = true } = _a, props = __rest(_a, ["className", "orientation", "decorative"]);
     return (<SeparatorPrimitive.Root ref={ref} decorative={decorative} orientation={orientation} className={(0, utils_1.cn)("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className)} {...props}/>);
 });
 exports.Separator = Separator;

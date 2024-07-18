@@ -36,25 +36,25 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TabsContent = exports.TabsTrigger = exports.TabsList = exports.Tabs = void 0;
-var React = __importStar(require("react"));
-var TabsPrimitive = __importStar(require("@radix-ui/react-tabs"));
-var utils_1 = require("@/lib/utils");
-var Tabs = TabsPrimitive.Root;
+const React = __importStar(require("react"));
+const TabsPrimitive = __importStar(require("@radix-ui/react-tabs"));
+const utils_1 = require("@/lib/utils");
+const Tabs = TabsPrimitive.Root;
 exports.Tabs = Tabs;
-var TabsList = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const TabsList = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<TabsPrimitive.List ref={ref} className={(0, utils_1.cn)("inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground", className)} {...props}/>);
 });
 exports.TabsList = TabsList;
 TabsList.displayName = TabsPrimitive.List.displayName;
-var TabsTrigger = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const TabsTrigger = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<TabsPrimitive.Trigger ref={ref} className={(0, utils_1.cn)("inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm", className)} {...props}/>);
 });
 exports.TabsTrigger = TabsTrigger;
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
-var TabsContent = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const TabsContent = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<TabsPrimitive.Content ref={ref} className={(0, utils_1.cn)("mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2", className)} {...props}/>);
 });
 exports.TabsContent = TabsContent;

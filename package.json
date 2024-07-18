@@ -1,6 +1,6 @@
 {
   "name": "@maxpp/app-components",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "dev": "next dev",
     "build": "tsc",
@@ -75,8 +75,8 @@
     "typescript": "^5"
   },
   "description": "A collection of dead simple essential components that will save you time and boilerplate code.",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "directories": {
     "lib": "lib"
   },

@@ -1,12 +1,104 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.configFileMd = exports.buttonDescriptionMd = exports.navlinkDescriptionMd = exports.appNavLinkCodeMd = exports.appNavLinkMd = exports.appButtonCodeMd = exports.appButtonMd = exports.markdown = exports.installationMd = void 0;
-exports.installationMd = "\n## Installation\n\n```\nnpm install @maxpauwels/app-components\n```\n\n";
-exports.markdown = "\n## App Components\n\nThis is a collection of dead simple essential components that will save you time and boilerplate code.\n\nThese are just wrappers around the [Shadcn](https://www.shadcn.com/) components, so you can use them as you would use the originals, but with the additional App features.\n\n### What does it do? \nThe components include a couple of essential features that you normally end up having to write over and over again, as well as some essential typesafety for your app.\n\nIf you haven't used these essential features in your core components, you'll ask yourself why soon enough.\n";
-exports.appButtonMd = "\n- `loading`: A boolean value that when set to true, displays a loading spinner and disables the button.\n- `icon`: A autocomplete icon string from the [shadcn-icons](https://www.shadcn.com/icons.html) library. Saves you tons of time from having to wrap buttons in divs with icons and having to lookup the icon name.\n- `label`: A string value for the button lable which slightly reduces the lines of code. You can stil use the component with children, but I find myself using the label prop more often.\n- ... All other shadcn button props.\n";
-exports.appButtonCodeMd = "\n```\n<AppButton\n  label=\"Test\"\n  loading\n  icon=\"alarm-clock\"\n  variant=\"destructive\"\n/>\n```\n";
-exports.appNavLinkMd = "\n- `href`: This will autocomplete all your app paths, which you can set in the app-config.ts file. This is a minor feature, but is incredibly time saving and will prevent tons of broken links.\n- `customHref`: This repaces the standard `href` prop, which is useful if you want to use a custom url for the link. You can also just use the Next  `Link` in this case.\n- `as`: Quickly wrap the link in a shadcn button by settin as to button. The default is link.\n- ... All other NextJs Link props.\n";
-exports.appNavLinkCodeMd = "\n```\n<AppNavLink href=\"/demo\">Dasboard</AppNavLink>\n```\n\n";
-exports.navlinkDescriptionMd = "\nThe NextJs Link component, but with an additional essential props.\n- The href autocompletes all your app paths.\n- The `as` prop which can be set to `button` to wrap the link in a shadcn button. \n- The link automatically shows as active when the current path is part of the href path.\n";
-exports.buttonDescriptionMd = "\nThe shadcn button but with additional essential props.\n- `loading` to quickly set the button to a loading state with a spinner and disables the button.\n- `icon` autocompletes hundreds of icons from the [shadcn-icons](https://www.shadcn.com/icons.html) library. \n- `label` to quickly set the button label. (You can also use regular children).\n- ... All other shadcn button props.\n\n#### Additional props\nYou'll need to set the role type in the app-config.ts file.\n- `roleRestrictions` An array of user roles that the button will only display for.\n- `userRole` set the current user's role from your state.\n";
-exports.configFileMd = "\n## Config file\n\nThe config file is used to set the app variables. It's an extra step, but ends up saving  tons of time because it will autocomplete all your href's, allow you to control user roles, etc.\n\n- `UserAccountTypes`: An array of user roles that the button will only display for.\n- `AppNavPaths`: An array of all your app paths.\n\n\n\n### Example\nUpdate this with your own data. You can also assign existing types if you have them.\n```\nexport type UserAccountTypes = \n|\u00A0\"admin\" \n| \"super-admin\" \n| \"viewer\" \n| \"editor\";\n\nexport type AppNavPaths =\n  //Public paths\n  | \"/\"\n  | \"/about\"\n  | \"/policies/privacy-policy\"\n  | \"/policies/terms-of-service\"\n  // Auth paths\n  | \"/auth/sign-in\"\n  | \"/auth/sign-up\"\n  | \"/password-reset\"\n  // Dashboard paths\n  | \"/dashboard\"\n  | \"/dashboard/settings\"\n```\nThe `app-config.ts` should be in the root of your project. You can change the `AppNavPaths` with your own App paths. If you don't use user roles, you can set the `UserAccountTypes` to an empty string.\n";
+exports.installationMd = `
+## Installation
+
+\`\`\`
+npm install @maxpauwels/app-components
+\`\`\`
+
+`;
+exports.markdown = `
+## App Components
+
+This is a collection of dead simple essential components that will save you time and boilerplate code.
+
+These are just wrappers around the [Shadcn](https://www.shadcn.com/) components, so you can use them as you would use the originals, but with the additional App features.
+
+### What does it do? 
+The components include a couple of essential features that you normally end up having to write over and over again, as well as some essential typesafety for your app.
+
+If you haven't used these essential features in your core components, you'll ask yourself why soon enough.
+`;
+exports.appButtonMd = `
+- \`loading\`: A boolean value that when set to true, displays a loading spinner and disables the button.
+- \`icon\`: A autocomplete icon string from the [shadcn-icons](https://www.shadcn.com/icons.html) library. Saves you tons of time from having to wrap buttons in divs with icons and having to lookup the icon name.
+- \`label\`: A string value for the button lable which slightly reduces the lines of code. You can stil use the component with children, but I find myself using the label prop more often.
+- ... All other shadcn button props.
+`;
+exports.appButtonCodeMd = `
+\`\`\`
+<AppButton
+  label="Test"
+  loading
+  icon="alarm-clock"
+  variant="destructive"
+/>
+\`\`\`
+`;
+exports.appNavLinkMd = `
+- \`href\`: This will autocomplete all your app paths, which you can set in the app-config.ts file. This is a minor feature, but is incredibly time saving and will prevent tons of broken links.
+- \`customHref\`: This repaces the standard \`href\` prop, which is useful if you want to use a custom url for the link. You can also just use the Next  \`Link\` in this case.
+- \`as\`: Quickly wrap the link in a shadcn button by settin as to button. The default is link.
+- ... All other NextJs Link props.
+`;
+exports.appNavLinkCodeMd = `
+\`\`\`
+<AppNavLink href="/demo">Dasboard</AppNavLink>
+\`\`\`
+
+`;
+exports.navlinkDescriptionMd = `
+The NextJs Link component, but with an additional essential props.
+- The href autocompletes all your app paths.
+- The \`as\` prop which can be set to \`button\` to wrap the link in a shadcn button. 
+- The link automatically shows as active when the current path is part of the href path.
+`;
+exports.buttonDescriptionMd = `
+The shadcn button but with additional essential props.
+- \`loading\` to quickly set the button to a loading state with a spinner and disables the button.
+- \`icon\` autocompletes hundreds of icons from the [shadcn-icons](https://www.shadcn.com/icons.html) library. 
+- \`label\` to quickly set the button label. (You can also use regular children).
+- ... All other shadcn button props.
+
+#### Additional props
+You'll need to set the role type in the app-config.ts file.
+- \`roleRestrictions\` An array of user roles that the button will only display for.
+- \`userRole\` set the current user's role from your state.
+`;
+exports.configFileMd = `
+## Config file
+
+The config file is used to set the app variables. It's an extra step, but ends up saving  tons of time because it will autocomplete all your href's, allow you to control user roles, etc.
+
+- \`UserAccountTypes\`: An array of user roles that the button will only display for.
+- \`AppNavPaths\`: An array of all your app paths.
+
+
+
+### Example
+Update this with your own data. You can also assign existing types if you have them.
+\`\`\`
+export type UserAccountTypes = 
+| "admin" 
+| "super-admin" 
+| "viewer" 
+| "editor";
+
+export type AppNavPaths =
+  //Public paths
+  | "/"
+  | "/about"
+  | "/policies/privacy-policy"
+  | "/policies/terms-of-service"
+  // Auth paths
+  | "/auth/sign-in"
+  | "/auth/sign-up"
+  | "/password-reset"
+  // Dashboard paths
+  | "/dashboard"
+  | "/dashboard/settings"
+\`\`\`
+The \`app-config.ts\` should be in the root of your project. You can change the \`AppNavPaths\` with your own App paths. If you don't use user roles, you can set the \`UserAccountTypes\` to an empty string.
+`;

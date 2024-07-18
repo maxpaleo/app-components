@@ -36,23 +36,23 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AvatarFallback = exports.AvatarImage = exports.Avatar = void 0;
-var React = __importStar(require("react"));
-var AvatarPrimitive = __importStar(require("@radix-ui/react-avatar"));
-var utils_1 = require("@/lib/utils");
-var Avatar = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const React = __importStar(require("react"));
+const AvatarPrimitive = __importStar(require("@radix-ui/react-avatar"));
+const utils_1 = require("@/lib/utils");
+const Avatar = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<AvatarPrimitive.Root ref={ref} className={(0, utils_1.cn)("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", className)} {...props}/>);
 });
 exports.Avatar = Avatar;
 Avatar.displayName = AvatarPrimitive.Root.displayName;
-var AvatarImage = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const AvatarImage = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<AvatarPrimitive.Image ref={ref} className={(0, utils_1.cn)("aspect-square h-full w-full", className)} {...props}/>);
 });
 exports.AvatarImage = AvatarImage;
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
-var AvatarFallback = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const AvatarFallback = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<AvatarPrimitive.Fallback ref={ref} className={(0, utils_1.cn)("flex h-full w-full items-center justify-center rounded-full bg-muted", className)} {...props}/>);
 });
 exports.AvatarFallback = AvatarFallback;

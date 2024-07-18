@@ -36,11 +36,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toggleVariants = exports.Toggle = void 0;
-var React = __importStar(require("react"));
-var TogglePrimitive = __importStar(require("@radix-ui/react-toggle"));
-var class_variance_authority_1 = require("class-variance-authority");
-var utils_1 = require("@/lib/utils");
-var toggleVariants = (0, class_variance_authority_1.cva)("inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground", {
+const React = __importStar(require("react"));
+const TogglePrimitive = __importStar(require("@radix-ui/react-toggle"));
+const class_variance_authority_1 = require("class-variance-authority");
+const utils_1 = require("@/lib/utils");
+const toggleVariants = (0, class_variance_authority_1.cva)("inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground", {
     variants: {
         variant: {
             default: "bg-transparent",
@@ -58,9 +58,9 @@ var toggleVariants = (0, class_variance_authority_1.cva)("inline-flex items-cent
     },
 });
 exports.toggleVariants = toggleVariants;
-var Toggle = React.forwardRef(function (_a, ref) {
-    var className = _a.className, variant = _a.variant, size = _a.size, props = __rest(_a, ["className", "variant", "size"]);
-    return (<TogglePrimitive.Root ref={ref} className={(0, utils_1.cn)(toggleVariants({ variant: variant, size: size, className: className }))} {...props}/>);
+const Toggle = React.forwardRef((_a, ref) => {
+    var { className, variant, size } = _a, props = __rest(_a, ["className", "variant", "size"]);
+    return (<TogglePrimitive.Root ref={ref} className={(0, utils_1.cn)(toggleVariants({ variant, size, className }))} {...props}/>);
 });
 exports.Toggle = Toggle;
 Toggle.displayName = TogglePrimitive.Root.displayName;

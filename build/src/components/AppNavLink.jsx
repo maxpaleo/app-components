@@ -16,23 +16,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppNavLink = void 0;
-var react_1 = __importDefault(require("react"));
-var link_1 = __importDefault(require("next/link"));
-var navigation_1 = require("next/navigation");
-var AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
-var AppButton_1 = require("./AppButton");
-var lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
-var AppNavLink = function (_a) {
-    var className = _a.className, href = _a.href, children = _a.children, customHref = _a.customHref, _b = _a.as, as = _b === void 0 ? "link" : _b, icon = _a.icon, variant = _a.variant, rest = __rest(_a, ["className", "href", "children", "customHref", "as", "icon", "variant"]);
-    var pathname = (0, navigation_1.usePathname)();
-    var params = (0, navigation_1.useParams)();
-    var pathnameWithoutParams = function () {
+const react_1 = __importDefault(require("react"));
+const link_1 = __importDefault(require("next/link"));
+const navigation_1 = require("next/navigation");
+const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
+const AppButton_1 = require("./AppButton");
+const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
+const AppNavLink = (_a) => {
+    var { className, href, children, customHref, as = "link", icon, variant } = _a, rest = __rest(_a, ["className", "href", "children", "customHref", "as", "icon", "variant"]);
+    const pathname = (0, navigation_1.usePathname)();
+    const params = (0, navigation_1.useParams)();
+    const pathnameWithoutParams = () => {
         // Convert params object to an array of its values
-        var paramValues = Object.values(params);
+        const paramValues = Object.values(params);
         // Remove param values from the pathname
-        var cleanedPathname = pathname;
-        paramValues.forEach(function (param) {
-            cleanedPathname = cleanedPathname.replace("/".concat(param), "");
+        let cleanedPathname = pathname;
+        paramValues.forEach((param) => {
+            cleanedPathname = cleanedPathname.replace(`/${param}`, "");
         });
         return cleanedPathname;
     };
@@ -43,21 +43,19 @@ var AppNavLink = function (_a) {
      *
      * FOr example, data sources in the dashboard: /dashboard/data/k2rd1a8w since k2rd1a8w is a path paramter, it will match /dashboard/data as well.
      */
-    var cleanPath = pathnameWithoutParams();
-    var isPartOfPath = cleanPath === href || pathname === href;
-    var setHref = (href || customHref);
-    var ButtonElement = function (_a) {
-        var children = _a.children;
+    const cleanPath = pathnameWithoutParams();
+    const isPartOfPath = cleanPath === href || pathname === href;
+    const setHref = (href || customHref);
+    const ButtonElement = ({ children }) => {
         return (<AppButton_1.AppButton variant={variant} className={className} icon={icon}>
         {children}
       </AppButton_1.AppButton>);
     };
-    var NavLink = function (_a) {
-        var children = _a.children;
+    const NavLink = ({ children }) => {
         return (<>
-        <AppScreenReaders_1.default.Link label={"Navigate to page: ".concat(setHref)} href={String(setHref)}/>
+        <AppScreenReaders_1.default.Link label={`Navigate to page: ${setHref}`} href={String(setHref)}/>
         {as === "link" && icon && <lucide_icon_component_1.default icon={icon}/>}
-        <link_1.default href={setHref} className={"hover:opacity/100 font-medium transition-colors ".concat(as === "link" ? (isPartOfPath ? "opacity/100" : "opacity-65") : "")} {...rest}>
+        <link_1.default href={setHref} className={`hover:opacity/100 font-medium transition-colors ${as === "link" ? (isPartOfPath ? "opacity/100" : "opacity-65") : ""}`} {...rest}>
           {children}
         </link_1.default>
       </>);

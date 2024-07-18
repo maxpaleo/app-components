@@ -36,9 +36,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThemeProvider = ThemeProvider;
-var React = __importStar(require("react"));
-var next_themes_1 = require("next-themes");
+const React = __importStar(require("react"));
+const next_themes_1 = require("next-themes");
 function ThemeProvider(_a) {
-    var children = _a.children, props = __rest(_a, ["children"]);
+    var { children } = _a, props = __rest(_a, ["children"]);
     return <next_themes_1.ThemeProvider {...props}>{children}</next_themes_1.ThemeProvider>;
 }

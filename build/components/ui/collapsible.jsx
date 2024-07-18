@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CollapsibleContent = exports.CollapsibleTrigger = exports.Collapsible = void 0;
-var CollapsiblePrimitive = __importStar(require("@radix-ui/react-collapsible"));
-var Collapsible = CollapsiblePrimitive.Root;
+const CollapsiblePrimitive = __importStar(require("@radix-ui/react-collapsible"));
+const Collapsible = CollapsiblePrimitive.Root;
 exports.Collapsible = Collapsible;
-var CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger;
+const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger;
 exports.CollapsibleTrigger = CollapsibleTrigger;
-var CollapsibleContent = CollapsiblePrimitive.CollapsibleContent;
+const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent;
 exports.CollapsibleContent = CollapsibleContent;

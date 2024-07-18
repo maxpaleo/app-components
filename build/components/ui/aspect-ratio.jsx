@@ -25,6 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AspectRatio = void 0;
-var AspectRatioPrimitive = __importStar(require("@radix-ui/react-aspect-ratio"));
-var AspectRatio = AspectRatioPrimitive.Root;
+const AspectRatioPrimitive = __importStar(require("@radix-ui/react-aspect-ratio"));
+const AspectRatio = AspectRatioPrimitive.Root;
 exports.AspectRatio = AspectRatio;

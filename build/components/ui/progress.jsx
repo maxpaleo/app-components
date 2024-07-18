@@ -36,13 +36,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Progress = void 0;
-var React = __importStar(require("react"));
-var ProgressPrimitive = __importStar(require("@radix-ui/react-progress"));
-var utils_1 = require("@/lib/utils");
-var Progress = React.forwardRef(function (_a, ref) {
-    var className = _a.className, value = _a.value, props = __rest(_a, ["className", "value"]);
+const React = __importStar(require("react"));
+const ProgressPrimitive = __importStar(require("@radix-ui/react-progress"));
+const utils_1 = require("@/lib/utils");
+const Progress = React.forwardRef((_a, ref) => {
+    var { className, value } = _a, props = __rest(_a, ["className", "value"]);
     return (<ProgressPrimitive.Root ref={ref} className={(0, utils_1.cn)("relative h-4 w-full overflow-hidden rounded-full bg-secondary", className)} {...props}>
-    <ProgressPrimitive.Indicator className="h-full w-full flex-1 bg-primary transition-all" style={{ transform: "translateX(-".concat(100 - (value || 0), "%)") }}/>
+    <ProgressPrimitive.Indicator className="h-full w-full flex-1 bg-primary transition-all" style={{ transform: `translateX(-${100 - (value || 0)}%)` }}/>
   </ProgressPrimitive.Root>);
 });
 exports.Progress = Progress;

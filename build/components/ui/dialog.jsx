@@ -36,26 +36,26 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DialogDescription = exports.DialogTitle = exports.DialogFooter = exports.DialogHeader = exports.DialogContent = exports.DialogTrigger = exports.DialogClose = exports.DialogOverlay = exports.DialogPortal = exports.Dialog = void 0;
-var React = __importStar(require("react"));
-var DialogPrimitive = __importStar(require("@radix-ui/react-dialog"));
-var lucide_react_1 = require("lucide-react");
-var utils_1 = require("@/lib/utils");
-var Dialog = DialogPrimitive.Root;
+const React = __importStar(require("react"));
+const DialogPrimitive = __importStar(require("@radix-ui/react-dialog"));
+const lucide_react_1 = require("lucide-react");
+const utils_1 = require("@/lib/utils");
+const Dialog = DialogPrimitive.Root;
 exports.Dialog = Dialog;
-var DialogTrigger = DialogPrimitive.Trigger;
+const DialogTrigger = DialogPrimitive.Trigger;
 exports.DialogTrigger = DialogTrigger;
-var DialogPortal = DialogPrimitive.Portal;
+const DialogPortal = DialogPrimitive.Portal;
 exports.DialogPortal = DialogPortal;
-var DialogClose = DialogPrimitive.Close;
+const DialogClose = DialogPrimitive.Close;
 exports.DialogClose = DialogClose;
-var DialogOverlay = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const DialogOverlay = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<DialogPrimitive.Overlay ref={ref} className={(0, utils_1.cn)("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className)} {...props}/>);
 });
 exports.DialogOverlay = DialogOverlay;
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
-var DialogContent = React.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, props = __rest(_a, ["className", "children"]);
+const DialogContent = React.forwardRef((_a, ref) => {
+    var { className, children } = _a, props = __rest(_a, ["className", "children"]);
     return (<DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content ref={ref} className={(0, utils_1.cn)("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className)} {...props}>
@@ -69,26 +69,26 @@ var DialogContent = React.forwardRef(function (_a, ref) {
 });
 exports.DialogContent = DialogContent;
 DialogContent.displayName = DialogPrimitive.Content.displayName;
-var DialogHeader = function (_a) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const DialogHeader = (_a) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<div className={(0, utils_1.cn)("flex flex-col space-y-1.5 text-center sm:text-left", className)} {...props}/>);
 };
 exports.DialogHeader = DialogHeader;
 DialogHeader.displayName = "DialogHeader";
-var DialogFooter = function (_a) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const DialogFooter = (_a) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<div className={(0, utils_1.cn)("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)} {...props}/>);
 };
 exports.DialogFooter = DialogFooter;
 DialogFooter.displayName = "DialogFooter";
-var DialogTitle = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const DialogTitle = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<DialogPrimitive.Title ref={ref} className={(0, utils_1.cn)("text-lg font-semibold leading-none tracking-tight", className)} {...props}/>);
 });
 exports.DialogTitle = DialogTitle;
 DialogTitle.displayName = DialogPrimitive.Title.displayName;
-var DialogDescription = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const DialogDescription = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<DialogPrimitive.Description ref={ref} className={(0, utils_1.cn)("text-sm text-muted-foreground", className)} {...props}/>);
 });
 exports.DialogDescription = DialogDescription;

@@ -23,11 +23,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs = __importStar(require("fs"));
-var path = __importStar(require("path"));
-var configContent = "// Configuration\nexport const config = {\n  key: 'value',\n  // Add more configuration options as needed\n};";
-var configPath = path.join(process.cwd(), "app-config.ts");
-fs.writeFile(configPath, configContent, { flag: "wx" }, function (err) {
+const fs = __importStar(require("fs"));
+const path = __importStar(require("path"));
+const configContent = `// Configuration
+export const config = {
+  key: 'value',
+  // Add more configuration options as needed
+};`;
+const configPath = path.join(process.cwd(), "app-config.ts");
+fs.writeFile(configPath, configContent, { flag: "wx" }, (err) => {
     if (err) {
         if (err.code === "EEXIST") {
             console.error("app-config.ts already exists. No new file was created.");

@@ -36,11 +36,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Slider = void 0;
-var React = __importStar(require("react"));
-var SliderPrimitive = __importStar(require("@radix-ui/react-slider"));
-var utils_1 = require("@/lib/utils");
-var Slider = React.forwardRef(function (_a, ref) {
-    var className = _a.className, props = __rest(_a, ["className"]);
+const React = __importStar(require("react"));
+const SliderPrimitive = __importStar(require("@radix-ui/react-slider"));
+const utils_1 = require("@/lib/utils");
+const Slider = React.forwardRef((_a, ref) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
     return (<SliderPrimitive.Root ref={ref} className={(0, utils_1.cn)("relative flex w-full touch-none select-none items-center", className)} {...props}>
     <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
       <SliderPrimitive.Range className="absolute h-full bg-primary"/>

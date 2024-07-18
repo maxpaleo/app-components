@@ -13,13 +13,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Toaster = Toaster;
-var toast_1 = require("@/components/ui/toast");
-var use_toast_1 = require("@/components/ui/use-toast");
+const toast_1 = require("@/components/ui/toast");
+const use_toast_1 = require("@/components/ui/use-toast");
 function Toaster() {
-    var toasts = (0, use_toast_1.useToast)().toasts;
+    const { toasts } = (0, use_toast_1.useToast)();
     return (<toast_1.ToastProvider>
       {toasts.map(function (_a) {
-            var id = _a.id, title = _a.title, description = _a.description, action = _a.action, props = __rest(_a, ["id", "title", "description", "action"]);
+            var { id, title, description, action } = _a, props = __rest(_a, ["id", "title", "description", "action"]);
             return (<toast_1.Toast key={id} {...props}>
             <div className="grid gap-1">
               {title && <toast_1.ToastTitle>{title}</toast_1.ToastTitle>}
