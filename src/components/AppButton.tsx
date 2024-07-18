@@ -2,7 +2,8 @@ import React from "react";
 import SR from "./AppScreenReaders";
 import Icon from "lucide-icon-component";
 import { LucideIconNames } from "lucide-icon-component/build/lucide-icon-config";
-import { Button, ButtonProps, UserAccountTypes } from "@config";
+import { UserAccountTypes } from "@/app-config";
+import { Button, ButtonProps } from "@/components/ui/button";
 
 export type AppButtonType = ButtonProps & {
   icon?: LucideIconNames;

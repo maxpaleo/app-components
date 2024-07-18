@@ -1,7 +1,8 @@
 import React from "react";
 import { LinkProps } from "next/link";
-import { AppNavPaths, ButtonProps } from "@config";
 import { LucideIconNames } from "lucide-icon-component/build/lucide-icon-config";
+import { AppNavPaths } from "@/app-config";
+import { ButtonProps } from "@/components/ui/button";
 type AppNavLinkProps = Omit<LinkProps, "href"> & Pick<ButtonProps, "variant"> & {
     children?: React.ReactNode;
     className?: string;

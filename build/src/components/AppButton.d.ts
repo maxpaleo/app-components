@@ -1,6 +1,7 @@
 import React from "react";
 import { LucideIconNames } from "lucide-icon-component/build/lucide-icon-config";
-import { ButtonProps, UserAccountTypes } from "@config";
+import { UserAccountTypes } from "@/app-config";
+import { ButtonProps } from "@/components/ui/button";
 export type AppButtonType = ButtonProps & {
     icon?: LucideIconNames;
     loading?: boolean;

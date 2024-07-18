@@ -18,7 +18,7 @@ exports.AppButton = void 0;
 const react_1 = __importDefault(require("react"));
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
 const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
-const _config_1 = require("@config");
+const button_1 = require("@/components/ui/button");
 const AppButton = (_a) => {
     var { icon, loading = false, size, children, disabled, label, screenReaderText, roleRestrictions, userRole, asChild } = _a, rest = __rest(_a, ["icon", "loading", "size", "children", "disabled", "label", "screenReaderText", "roleRestrictions", "userRole", "asChild"]);
     const selectedIcon = icon;
@@ -35,14 +35,14 @@ const AppButton = (_a) => {
     return (<>
       <AppScreenReaders_1.default.Button label={screenReaderTextValue} onClick={onClick}/>
 
-      <_config_1.Button size={size} disabled={disabled || loading} asChild={asChild} {...rest}>
+      <button_1.Button size={size} disabled={disabled || loading} asChild={asChild} {...rest}>
         <div className="flex gap-2 items-center">
           {selectedIcon && (<lucide_icon_component_1.default size={iconSize} className="" icon={selectedIcon}/>)}
           {label && <span className={textSize}> {label}</span>}
           <>{children}</>
           {loading && <lucide_icon_component_1.default className="animate-spin" icon="loader-2"/>}
         </div>
-      </_config_1.Button>
+      </button_1.Button>
     </>);
 };
 exports.AppButton = AppButton;

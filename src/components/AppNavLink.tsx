@@ -4,9 +4,10 @@ import Link, { LinkProps } from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import SR from "./AppScreenReaders";
 import { AppButton } from "./AppButton";
-import { AppNavPaths, ButtonProps } from "@config";
 import { LucideIconNames } from "lucide-icon-component/build/lucide-icon-config";
 import Icon from "lucide-icon-component";
+import { AppNavPaths } from "@/app-config";
+import { ButtonProps } from "@/components/ui/button";
 
 type AppNavLinkProps = Omit<LinkProps, "href"> &
   Pick<ButtonProps, "variant"> & {
