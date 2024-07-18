@@ -1,7 +1,6 @@
 {
   "name": "@maxxp/app-components",
-  "version": "0.1.5",
-  "private": false,
+  "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
     "build": "tsc",

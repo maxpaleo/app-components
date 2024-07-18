@@ -12,3 +12,4 @@ components/
 app/
 .next/
 components.json
+build/components/*
