@@ -12,4 +12,6 @@ components/
 app/
 .next/
 components.json
+build/app/*
+build/lib/*
 build/components/*
