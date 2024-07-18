@@ -12,8 +12,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Skeleton = Skeleton;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const utils_1 = require("@/lib/utils");
 function Skeleton(_a) {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ className: (0, utils_1.cn)("animate-pulse rounded-md bg-muted", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ className: (0, utils_1.cn)("animate-pulse rounded-md bg-muted", className) }, props)));
 }

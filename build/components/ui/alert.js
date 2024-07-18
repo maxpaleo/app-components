@@ -35,6 +35,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AlertDescription = exports.AlertTitle = exports.Alert = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const class_variance_authority_1 = require("class-variance-authority");
 const utils_1 = require("@/lib/utils");
@@ -51,19 +52,19 @@ const alertVariants = (0, class_variance_authority_1.cva)("relative w-full round
 });
 const Alert = React.forwardRef((_a, ref) => {
     var { className, variant } = _a, props = __rest(_a, ["className", "variant"]);
-    return (React.createElement("div", Object.assign({ ref: ref, role: "alert", className: (0, utils_1.cn)(alertVariants({ variant }), className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ ref: ref, role: "alert", className: (0, utils_1.cn)(alertVariants({ variant }), className) }, props)));
 });
 exports.Alert = Alert;
 Alert.displayName = "Alert";
 const AlertTitle = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("h5", Object.assign({ ref: ref, className: (0, utils_1.cn)("mb-1 font-medium leading-none tracking-tight", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("h5", Object.assign({ ref: ref, className: (0, utils_1.cn)("mb-1 font-medium leading-none tracking-tight", className) }, props)));
 });
 exports.AlertTitle = AlertTitle;
 AlertTitle.displayName = "AlertTitle";
 const AlertDescription = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm [&_p]:leading-relaxed", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm [&_p]:leading-relaxed", className) }, props)));
 });
 exports.AlertDescription = AlertDescription;
 AlertDescription.displayName = "AlertDescription";

@@ -35,6 +35,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buttonVariants = exports.Button = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const react_slot_1 = require("@radix-ui/react-slot");
 const class_variance_authority_1 = require("class-variance-authority");
@@ -65,7 +66,7 @@ exports.buttonVariants = buttonVariants;
 const Button = React.forwardRef((_a, ref) => {
     var { className, variant, size, asChild = false } = _a, props = __rest(_a, ["className", "variant", "size", "asChild"]);
     const Comp = asChild ? react_slot_1.Slot : "button";
-    return (React.createElement(Comp, Object.assign({ className: (0, utils_1.cn)(buttonVariants({ variant, size, className })), ref: ref }, props)));
+    return ((0, jsx_runtime_1.jsx)(Comp, Object.assign({ className: (0, utils_1.cn)(buttonVariants({ variant, size, className })), ref: ref }, props)));
 });
 exports.Button = Button;
 Button.displayName = "Button";

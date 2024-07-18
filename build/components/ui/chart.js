@@ -36,6 +36,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChartStyle = exports.ChartLegendContent = exports.ChartLegend = exports.ChartTooltipContent = exports.ChartTooltip = exports.ChartContainer = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const RechartsPrimitive = __importStar(require("recharts"));
 const utils_1 = require("@/lib/utils");
@@ -53,10 +54,7 @@ const ChartContainer = React.forwardRef((_a, ref) => {
     var { id, className, children, config } = _a, props = __rest(_a, ["id", "className", "children", "config"]);
     const uniqueId = React.useId();
     const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
-    return (React.createElement(ChartContext.Provider, { value: { config } },
-        React.createElement("div", Object.assign({ "data-chart": chartId, ref: ref, className: (0, utils_1.cn)("flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none", className) }, props),
-            React.createElement(ChartStyle, { id: chartId, config: config }),
-            React.createElement(RechartsPrimitive.ResponsiveContainer, null, children))));
+    return ((0, jsx_runtime_1.jsx)(ChartContext.Provider, { value: { config }, children: (0, jsx_runtime_1.jsxs)("div", Object.assign({ "data-chart": chartId, ref: ref, className: (0, utils_1.cn)("flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none", className) }, props, { children: [(0, jsx_runtime_1.jsx)(ChartStyle, { id: chartId, config: config }), (0, jsx_runtime_1.jsx)(RechartsPrimitive.ResponsiveContainer, { children: children })] })) }));
 });
 exports.ChartContainer = ChartContainer;
 ChartContainer.displayName = "Chart";
@@ -65,7 +63,7 @@ const ChartStyle = ({ id, config }) => {
     if (!colorConfig.length) {
         return null;
     }
-    return (React.createElement("style", { dangerouslySetInnerHTML: {
+    return ((0, jsx_runtime_1.jsx)("style", { dangerouslySetInnerHTML: {
             __html: Object.entries(THEMES)
                 .map(([theme, prefix]) => `
 ${prefix} [data-chart=${id}] {
@@ -99,12 +97,12 @@ const ChartTooltipContent = React.forwardRef(({ active, payload, className, indi
             ? ((_a = config[label]) === null || _a === void 0 ? void 0 : _a.label) || label
             : itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.label;
         if (labelFormatter) {
-            return (React.createElement("div", { className: (0, utils_1.cn)("font-medium", labelClassName) }, labelFormatter(value, payload)));
+            return ((0, jsx_runtime_1.jsx)("div", { className: (0, utils_1.cn)("font-medium", labelClassName), children: labelFormatter(value, payload) }));
         }
         if (!value) {
             return null;
         }
-        return React.createElement("div", { className: (0, utils_1.cn)("font-medium", labelClassName) }, value);
+        return (0, jsx_runtime_1.jsx)("div", { className: (0, utils_1.cn)("font-medium", labelClassName), children: value });
     }, [
         label,
         labelFormatter,
@@ -118,28 +116,20 @@ const ChartTooltipContent = React.forwardRef(({ active, payload, className, indi
         return null;
     }
     const nestLabel = payload.length === 1 && indicator !== "dot";
-    return (React.createElement("div", { ref: ref, className: (0, utils_1.cn)("grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl", className) },
-        !nestLabel ? tooltipLabel : null,
-        React.createElement("div", { className: "grid gap-1.5" }, payload.map((item, index) => {
-            const key = `${nameKey || item.name || item.dataKey || "value"}`;
-            const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            const indicatorColor = color || item.payload.fill || item.color;
-            return (React.createElement("div", { key: item.dataKey, className: (0, utils_1.cn)("flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground", indicator === "dot" && "items-center") }, formatter && (item === null || item === void 0 ? void 0 : item.value) !== undefined && item.name ? (formatter(item.value, item.name, item, index, item.payload)) : (React.createElement(React.Fragment, null,
-                (itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.icon) ? (React.createElement(itemConfig.icon, null)) : (!hideIndicator && (React.createElement("div", { className: (0, utils_1.cn)("shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]", {
-                        "h-2.5 w-2.5": indicator === "dot",
-                        "w-1": indicator === "line",
-                        "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
-                        "my-0.5": nestLabel && indicator === "dashed",
-                    }), style: {
-                        "--color-bg": indicatorColor,
-                        "--color-border": indicatorColor,
-                    } }))),
-                React.createElement("div", { className: (0, utils_1.cn)("flex flex-1 justify-between leading-none", nestLabel ? "items-end" : "items-center") },
-                    React.createElement("div", { className: "grid gap-1.5" },
-                        nestLabel ? tooltipLabel : null,
-                        React.createElement("span", { className: "text-muted-foreground" }, (itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.label) || item.name)),
-                    item.value && (React.createElement("span", { className: "font-mono font-medium tabular-nums text-foreground" }, item.value.toLocaleString())))))));
-        }))));
+    return ((0, jsx_runtime_1.jsxs)("div", { ref: ref, className: (0, utils_1.cn)("grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl", className), children: [!nestLabel ? tooltipLabel : null, (0, jsx_runtime_1.jsx)("div", { className: "grid gap-1.5", children: payload.map((item, index) => {
+                    const key = `${nameKey || item.name || item.dataKey || "value"}`;
+                    const itemConfig = getPayloadConfigFromPayload(config, item, key);
+                    const indicatorColor = color || item.payload.fill || item.color;
+                    return ((0, jsx_runtime_1.jsx)("div", { className: (0, utils_1.cn)("flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground", indicator === "dot" && "items-center"), children: formatter && (item === null || item === void 0 ? void 0 : item.value) !== undefined && item.name ? (formatter(item.value, item.name, item, index, item.payload)) : ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.icon) ? ((0, jsx_runtime_1.jsx)(itemConfig.icon, {})) : (!hideIndicator && ((0, jsx_runtime_1.jsx)("div", { className: (0, utils_1.cn)("shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]", {
+                                        "h-2.5 w-2.5": indicator === "dot",
+                                        "w-1": indicator === "line",
+                                        "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
+                                        "my-0.5": nestLabel && indicator === "dashed",
+                                    }), style: {
+                                        "--color-bg": indicatorColor,
+                                        "--color-border": indicatorColor,
+                                    } }))), (0, jsx_runtime_1.jsxs)("div", { className: (0, utils_1.cn)("flex flex-1 justify-between leading-none", nestLabel ? "items-end" : "items-center"), children: [(0, jsx_runtime_1.jsxs)("div", { className: "grid gap-1.5", children: [nestLabel ? tooltipLabel : null, (0, jsx_runtime_1.jsx)("span", { className: "text-muted-foreground", children: (itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.label) || item.name })] }), item.value && ((0, jsx_runtime_1.jsx)("span", { className: "font-mono font-medium tabular-nums text-foreground", children: item.value.toLocaleString() }))] })] })) }, item.dataKey));
+                }) })] }));
 });
 exports.ChartTooltipContent = ChartTooltipContent;
 ChartTooltipContent.displayName = "ChartTooltip";
@@ -150,15 +140,13 @@ const ChartLegendContent = React.forwardRef(({ className, hideIcon = false, payl
     if (!(payload === null || payload === void 0 ? void 0 : payload.length)) {
         return null;
     }
-    return (React.createElement("div", { ref: ref, className: (0, utils_1.cn)("flex items-center justify-center gap-4", verticalAlign === "top" ? "pb-3" : "pt-3", className) }, payload.map((item) => {
-        const key = `${nameKey || item.dataKey || "value"}`;
-        const itemConfig = getPayloadConfigFromPayload(config, item, key);
-        return (React.createElement("div", { key: item.value, className: (0, utils_1.cn)("flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground") },
-            (itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.icon) && !hideIcon ? (React.createElement(itemConfig.icon, null)) : (React.createElement("div", { className: "h-2 w-2 shrink-0 rounded-[2px]", style: {
-                    backgroundColor: item.color,
-                } })), itemConfig === null || itemConfig === void 0 ? void 0 :
-            itemConfig.label));
-    })));
+    return ((0, jsx_runtime_1.jsx)("div", { ref: ref, className: (0, utils_1.cn)("flex items-center justify-center gap-4", verticalAlign === "top" ? "pb-3" : "pt-3", className), children: payload.map((item) => {
+            const key = `${nameKey || item.dataKey || "value"}`;
+            const itemConfig = getPayloadConfigFromPayload(config, item, key);
+            return ((0, jsx_runtime_1.jsxs)("div", { className: (0, utils_1.cn)("flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"), children: [(itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.icon) && !hideIcon ? ((0, jsx_runtime_1.jsx)(itemConfig.icon, {})) : ((0, jsx_runtime_1.jsx)("div", { className: "h-2 w-2 shrink-0 rounded-[2px]", style: {
+                            backgroundColor: item.color,
+                        } })), itemConfig === null || itemConfig === void 0 ? void 0 : itemConfig.label] }, item.value));
+        }) }));
 });
 exports.ChartLegendContent = ChartLegendContent;
 ChartLegendContent.displayName = "ChartLegend";

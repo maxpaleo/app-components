@@ -36,6 +36,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ToggleGroupItem = exports.ToggleGroup = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const ToggleGroupPrimitive = __importStar(require("@radix-ui/react-toggle-group"));
 const utils_1 = require("@/lib/utils");
@@ -46,18 +47,17 @@ const ToggleGroupContext = React.createContext({
 });
 const ToggleGroup = React.forwardRef((_a, ref) => {
     var { className, variant, size, children } = _a, props = __rest(_a, ["className", "variant", "size", "children"]);
-    return (React.createElement(ToggleGroupPrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)("flex items-center justify-center gap-1", className) }, props),
-        React.createElement(ToggleGroupContext.Provider, { value: { variant, size } }, children)));
+    return ((0, jsx_runtime_1.jsx)(ToggleGroupPrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)("flex items-center justify-center gap-1", className) }, props, { children: (0, jsx_runtime_1.jsx)(ToggleGroupContext.Provider, { value: { variant, size }, children: children }) })));
 });
 exports.ToggleGroup = ToggleGroup;
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 const ToggleGroupItem = React.forwardRef((_a, ref) => {
     var { className, children, variant, size } = _a, props = __rest(_a, ["className", "children", "variant", "size"]);
     const context = React.useContext(ToggleGroupContext);
-    return (React.createElement(ToggleGroupPrimitive.Item, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, toggle_1.toggleVariants)({
+    return ((0, jsx_runtime_1.jsx)(ToggleGroupPrimitive.Item, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, toggle_1.toggleVariants)({
             variant: context.variant || variant,
             size: context.size || size,
-        }), className) }, props), children));
+        }), className) }, props, { children: children })));
 });
 exports.ToggleGroupItem = ToggleGroupItem;
 ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;

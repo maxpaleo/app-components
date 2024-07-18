@@ -36,13 +36,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Progress = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const ProgressPrimitive = __importStar(require("@radix-ui/react-progress"));
 const utils_1 = require("@/lib/utils");
 const Progress = React.forwardRef((_a, ref) => {
     var { className, value } = _a, props = __rest(_a, ["className", "value"]);
-    return (React.createElement(ProgressPrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)("relative h-4 w-full overflow-hidden rounded-full bg-secondary", className) }, props),
-        React.createElement(ProgressPrimitive.Indicator, { className: "h-full w-full flex-1 bg-primary transition-all", style: { transform: `translateX(-${100 - (value || 0)}%)` } })));
+    return ((0, jsx_runtime_1.jsx)(ProgressPrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)("relative h-4 w-full overflow-hidden rounded-full bg-secondary", className) }, props, { children: (0, jsx_runtime_1.jsx)(ProgressPrimitive.Indicator, { className: "h-full w-full flex-1 bg-primary transition-all", style: { transform: `translateX(-${100 - (value || 0)}%)` } }) })));
 });
 exports.Progress = Progress;
 Progress.displayName = ProgressPrimitive.Root.displayName;

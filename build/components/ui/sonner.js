@@ -13,12 +13,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Toaster = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const next_themes_1 = require("next-themes");
 const sonner_1 = require("sonner");
 const Toaster = (_a) => {
     var props = __rest(_a, []);
     const { theme = "system" } = (0, next_themes_1.useTheme)();
-    return (React.createElement(sonner_1.Toaster, Object.assign({ theme: theme, className: "toaster group", toastOptions: {
+    return ((0, jsx_runtime_1.jsx)(sonner_1.Toaster, Object.assign({ theme: theme, className: "toaster group", toastOptions: {
             classNames: {
                 toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
                 description: "group-[.toast]:text-muted-foreground",

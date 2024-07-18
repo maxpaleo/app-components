@@ -1,18 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
 const utils_1 = require("@/lib/utils");
-const react_1 = __importDefault(require("react"));
 const SRInputLabel = ({ blockId, label }) => {
-    return (react_1.default.createElement("label", { htmlFor: (0, utils_1.cn)("i-", blockId), className: "sr-only" }, label));
+    return ((0, jsx_runtime_1.jsx)("label", { htmlFor: (0, utils_1.cn)("i-", blockId), className: "sr-only", children: label }));
 };
 const SRButton = ({ label, onClick }) => {
-    return (react_1.default.createElement("button", { onClick: onClick, className: "sr-only", "aria-label": `${label} button` }, label));
+    return ((0, jsx_runtime_1.jsx)("button", { onClick: onClick, className: "sr-only", "aria-label": `${label} button`, children: label }));
 };
 const SRLink = ({ href, label }) => {
-    return (react_1.default.createElement("a", { href: href, className: "sr-only" }, label));
+    return ((0, jsx_runtime_1.jsx)("a", { href: href, className: "sr-only", children: label }));
 };
 /**
  * Screen reader components

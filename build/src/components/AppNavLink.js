@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppNavLink = void 0;
-const react_1 = __importDefault(require("react"));
+const jsx_runtime_1 = require("react/jsx-runtime");
 const link_1 = __importDefault(require("next/link"));
 const navigation_1 = require("next/navigation");
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
@@ -47,15 +47,11 @@ const AppNavLink = (_a) => {
     const isPartOfPath = cleanPath === href || pathname === href;
     const setHref = (href || customHref);
     const ButtonElement = ({ children }) => {
-        return (react_1.default.createElement(AppButton_1.AppButton, { variant: variant, className: className, icon: icon }, children));
+        return ((0, jsx_runtime_1.jsx)(AppButton_1.AppButton, { variant: variant, className: className, icon: icon, children: children }));
     };
     const NavLink = ({ children }) => {
-        return (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(AppScreenReaders_1.default.Link, { label: `Navigate to page: ${setHref}`, href: String(setHref) }),
-            as === "link" && icon && react_1.default.createElement(lucide_icon_component_1.default, { icon: icon }),
-            react_1.default.createElement(link_1.default, Object.assign({ href: setHref, className: `hover:opacity/100 font-medium transition-colors ${as === "link" ? (isPartOfPath ? "opacity/100" : "opacity-65") : ""}` }, rest), children)));
+        return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)(AppScreenReaders_1.default.Link, { label: `Navigate to page: ${setHref}`, href: String(setHref) }), as === "link" && icon && (0, jsx_runtime_1.jsx)(lucide_icon_component_1.default, { icon: icon }), (0, jsx_runtime_1.jsx)(link_1.default, Object.assign({ href: setHref, className: `hover:opacity/100 font-medium transition-colors ${as === "link" ? (isPartOfPath ? "opacity/100" : "opacity-65") : ""}` }, rest, { children: children }))] }));
     };
-    return as === "link" ? (react_1.default.createElement(NavLink, null, children)) : (react_1.default.createElement(NavLink, null,
-        react_1.default.createElement(ButtonElement, null, children)));
+    return as === "link" ? ((0, jsx_runtime_1.jsx)(NavLink, { children: children })) : ((0, jsx_runtime_1.jsx)(NavLink, { children: (0, jsx_runtime_1.jsx)(ButtonElement, { children: children }) }));
 };
 exports.AppNavLink = AppNavLink;

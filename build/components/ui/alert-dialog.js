@@ -36,6 +36,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AlertDialogCancel = exports.AlertDialogAction = exports.AlertDialogDescription = exports.AlertDialogTitle = exports.AlertDialogFooter = exports.AlertDialogHeader = exports.AlertDialogContent = exports.AlertDialogTrigger = exports.AlertDialogOverlay = exports.AlertDialogPortal = exports.AlertDialog = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const AlertDialogPrimitive = __importStar(require("@radix-ui/react-alert-dialog"));
 const utils_1 = require("@/lib/utils");
@@ -48,52 +49,50 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal;
 exports.AlertDialogPortal = AlertDialogPortal;
 const AlertDialogOverlay = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPrimitive.Overlay, Object.assign({ className: (0, utils_1.cn)("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
+    return ((0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Overlay, Object.assign({ className: (0, utils_1.cn)("fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0", className) }, props, { ref: ref })));
 });
 exports.AlertDialogOverlay = AlertDialogOverlay;
 AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
 const AlertDialogContent = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPortal, null,
-        React.createElement(AlertDialogOverlay, null),
-        React.createElement(AlertDialogPrimitive.Content, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props))));
+    return ((0, jsx_runtime_1.jsxs)(AlertDialogPortal, { children: [(0, jsx_runtime_1.jsx)(AlertDialogOverlay, {}), (0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Content, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className) }, props))] }));
 });
 exports.AlertDialogContent = AlertDialogContent;
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
 const AlertDialogHeader = (_a) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ className: (0, utils_1.cn)("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ className: (0, utils_1.cn)("flex flex-col space-y-2 text-center sm:text-left", className) }, props)));
 };
 exports.AlertDialogHeader = AlertDialogHeader;
 AlertDialogHeader.displayName = "AlertDialogHeader";
 const AlertDialogFooter = (_a) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ className: (0, utils_1.cn)("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ className: (0, utils_1.cn)("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className) }, props)));
 };
 exports.AlertDialogFooter = AlertDialogFooter;
 AlertDialogFooter.displayName = "AlertDialogFooter";
 const AlertDialogTitle = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPrimitive.Title, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-lg font-semibold", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Title, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-lg font-semibold", className) }, props)));
 });
 exports.AlertDialogTitle = AlertDialogTitle;
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
 const AlertDialogDescription = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPrimitive.Description, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm text-muted-foreground", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Description, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm text-muted-foreground", className) }, props)));
 });
 exports.AlertDialogDescription = AlertDialogDescription;
 AlertDialogDescription.displayName =
     AlertDialogPrimitive.Description.displayName;
 const AlertDialogAction = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPrimitive.Action, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, button_1.buttonVariants)(), className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Action, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, button_1.buttonVariants)(), className) }, props)));
 });
 exports.AlertDialogAction = AlertDialogAction;
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName;
 const AlertDialogCancel = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(AlertDialogPrimitive.Cancel, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, button_1.buttonVariants)({ variant: "outline" }), "mt-2 sm:mt-0", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(AlertDialogPrimitive.Cancel, Object.assign({ ref: ref, className: (0, utils_1.cn)((0, button_1.buttonVariants)({ variant: "outline" }), "mt-2 sm:mt-0", className) }, props)));
 });
 exports.AlertDialogCancel = AlertDialogCancel;
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;

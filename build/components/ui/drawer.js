@@ -36,12 +36,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DrawerDescription = exports.DrawerTitle = exports.DrawerFooter = exports.DrawerHeader = exports.DrawerContent = exports.DrawerClose = exports.DrawerTrigger = exports.DrawerOverlay = exports.DrawerPortal = exports.Drawer = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const vaul_1 = require("vaul");
 const utils_1 = require("@/lib/utils");
 const Drawer = (_a) => {
     var { shouldScaleBackground = true } = _a, props = __rest(_a, ["shouldScaleBackground"]);
-    return (React.createElement(vaul_1.Drawer.Root, Object.assign({ shouldScaleBackground: shouldScaleBackground }, props)));
+    return ((0, jsx_runtime_1.jsx)(vaul_1.Drawer.Root, Object.assign({ shouldScaleBackground: shouldScaleBackground }, props)));
 };
 exports.Drawer = Drawer;
 Drawer.displayName = "Drawer";
@@ -53,41 +54,37 @@ const DrawerClose = vaul_1.Drawer.Close;
 exports.DrawerClose = DrawerClose;
 const DrawerOverlay = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(vaul_1.Drawer.Overlay, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed inset-0 z-50 bg-black/80", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(vaul_1.Drawer.Overlay, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed inset-0 z-50 bg-black/80", className) }, props)));
 });
 exports.DrawerOverlay = DrawerOverlay;
 DrawerOverlay.displayName = vaul_1.Drawer.Overlay.displayName;
 const DrawerContent = React.forwardRef((_a, ref) => {
     var { className, children } = _a, props = __rest(_a, ["className", "children"]);
-    return (React.createElement(DrawerPortal, null,
-        React.createElement(DrawerOverlay, null),
-        React.createElement(vaul_1.Drawer.Content, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background", className) }, props),
-            React.createElement("div", { className: "mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" }),
-            children)));
+    return ((0, jsx_runtime_1.jsxs)(DrawerPortal, { children: [(0, jsx_runtime_1.jsx)(DrawerOverlay, {}), (0, jsx_runtime_1.jsxs)(vaul_1.Drawer.Content, Object.assign({ ref: ref, className: (0, utils_1.cn)("fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background", className) }, props, { children: [(0, jsx_runtime_1.jsx)("div", { className: "mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" }), children] }))] }));
 });
 exports.DrawerContent = DrawerContent;
 DrawerContent.displayName = "DrawerContent";
 const DrawerHeader = (_a) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ className: (0, utils_1.cn)("grid gap-1.5 p-4 text-center sm:text-left", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ className: (0, utils_1.cn)("grid gap-1.5 p-4 text-center sm:text-left", className) }, props)));
 };
 exports.DrawerHeader = DrawerHeader;
 DrawerHeader.displayName = "DrawerHeader";
 const DrawerFooter = (_a) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", Object.assign({ className: (0, utils_1.cn)("mt-auto flex flex-col gap-2 p-4", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ className: (0, utils_1.cn)("mt-auto flex flex-col gap-2 p-4", className) }, props)));
 };
 exports.DrawerFooter = DrawerFooter;
 DrawerFooter.displayName = "DrawerFooter";
 const DrawerTitle = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(vaul_1.Drawer.Title, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-lg font-semibold leading-none tracking-tight", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(vaul_1.Drawer.Title, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-lg font-semibold leading-none tracking-tight", className) }, props)));
 });
 exports.DrawerTitle = DrawerTitle;
 DrawerTitle.displayName = vaul_1.Drawer.Title.displayName;
 const DrawerDescription = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement(vaul_1.Drawer.Description, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm text-muted-foreground", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)(vaul_1.Drawer.Description, Object.assign({ ref: ref, className: (0, utils_1.cn)("text-sm text-muted-foreground", className) }, props)));
 });
 exports.DrawerDescription = DrawerDescription;
 DrawerDescription.displayName = vaul_1.Drawer.Description.displayName;

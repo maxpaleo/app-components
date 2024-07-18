@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppButton = void 0;
-const react_1 = __importDefault(require("react"));
+const jsx_runtime_1 = require("react/jsx-runtime");
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
 const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
 const button_1 = require("@/components/ui/button");
@@ -32,15 +32,6 @@ const AppButton = (_a) => {
         }
     }
     const { onClick } = rest;
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(AppScreenReaders_1.default.Button, { label: screenReaderTextValue, onClick: onClick }),
-        react_1.default.createElement(button_1.Button, Object.assign({ size: size, disabled: disabled || loading, asChild: asChild }, rest),
-            react_1.default.createElement("div", { className: "flex gap-2 items-center" },
-                selectedIcon && (react_1.default.createElement(lucide_icon_component_1.default, { size: iconSize, className: "", icon: selectedIcon })),
-                label && react_1.default.createElement("span", { className: textSize },
-                    " ",
-                    label),
-                react_1.default.createElement(react_1.default.Fragment, null, children),
-                loading && react_1.default.createElement(lucide_icon_component_1.default, { className: "animate-spin", icon: "loader-2" })))));
+    return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)(AppScreenReaders_1.default.Button, { label: screenReaderTextValue, onClick: onClick }), (0, jsx_runtime_1.jsx)(button_1.Button, Object.assign({ size: size, disabled: disabled || loading, asChild: asChild }, rest, { children: (0, jsx_runtime_1.jsxs)("div", { className: "flex gap-2 items-center", children: [selectedIcon && ((0, jsx_runtime_1.jsx)(lucide_icon_component_1.default, { size: iconSize, className: "", icon: selectedIcon })), label && (0, jsx_runtime_1.jsxs)("span", { className: textSize, children: [" ", label] }), (0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: children }), loading && (0, jsx_runtime_1.jsx)(lucide_icon_component_1.default, { className: "animate-spin", icon: "loader-2" })] }) }))] }));
 };
 exports.AppButton = AppButton;

@@ -35,54 +35,54 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TableCaption = exports.TableCell = exports.TableRow = exports.TableHead = exports.TableFooter = exports.TableBody = exports.TableHeader = exports.Table = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const utils_1 = require("@/lib/utils");
 const Table = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("div", { className: "relative w-full overflow-auto" },
-        React.createElement("table", Object.assign({ ref: ref, className: (0, utils_1.cn)("w-full caption-bottom text-sm", className) }, props))));
+    return ((0, jsx_runtime_1.jsx)("div", { className: "relative w-full overflow-auto", children: (0, jsx_runtime_1.jsx)("table", Object.assign({ ref: ref, className: (0, utils_1.cn)("w-full caption-bottom text-sm", className) }, props)) }));
 });
 exports.Table = Table;
 Table.displayName = "Table";
 const TableHeader = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("thead", Object.assign({ ref: ref, className: (0, utils_1.cn)("[&_tr]:border-b", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("thead", Object.assign({ ref: ref, className: (0, utils_1.cn)("[&_tr]:border-b", className) }, props)));
 });
 exports.TableHeader = TableHeader;
 TableHeader.displayName = "TableHeader";
 const TableBody = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("tbody", Object.assign({ ref: ref, className: (0, utils_1.cn)("[&_tr:last-child]:border-0", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("tbody", Object.assign({ ref: ref, className: (0, utils_1.cn)("[&_tr:last-child]:border-0", className) }, props)));
 });
 exports.TableBody = TableBody;
 TableBody.displayName = "TableBody";
 const TableFooter = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("tfoot", Object.assign({ ref: ref, className: (0, utils_1.cn)("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("tfoot", Object.assign({ ref: ref, className: (0, utils_1.cn)("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className) }, props)));
 });
 exports.TableFooter = TableFooter;
 TableFooter.displayName = "TableFooter";
 const TableRow = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("tr", Object.assign({ ref: ref, className: (0, utils_1.cn)("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("tr", Object.assign({ ref: ref, className: (0, utils_1.cn)("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className) }, props)));
 });
 exports.TableRow = TableRow;
 TableRow.displayName = "TableRow";
 const TableHead = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("th", Object.assign({ ref: ref, className: (0, utils_1.cn)("h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("th", Object.assign({ ref: ref, className: (0, utils_1.cn)("h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0", className) }, props)));
 });
 exports.TableHead = TableHead;
 TableHead.displayName = "TableHead";
 const TableCell = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("td", Object.assign({ ref: ref, className: (0, utils_1.cn)("p-4 align-middle [&:has([role=checkbox])]:pr-0", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("td", Object.assign({ ref: ref, className: (0, utils_1.cn)("p-4 align-middle [&:has([role=checkbox])]:pr-0", className) }, props)));
 });
 exports.TableCell = TableCell;
 TableCell.displayName = "TableCell";
 const TableCaption = React.forwardRef((_a, ref) => {
     var { className } = _a, props = __rest(_a, ["className"]);
-    return (React.createElement("caption", Object.assign({ ref: ref, className: (0, utils_1.cn)("mt-4 text-sm text-muted-foreground", className) }, props)));
+    return ((0, jsx_runtime_1.jsx)("caption", Object.assign({ ref: ref, className: (0, utils_1.cn)("mt-4 text-sm text-muted-foreground", className) }, props)));
 });
 exports.TableCaption = TableCaption;
 TableCaption.displayName = "TableCaption";

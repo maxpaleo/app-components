@@ -36,6 +36,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toggleVariants = exports.Toggle = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const TogglePrimitive = __importStar(require("@radix-ui/react-toggle"));
 const class_variance_authority_1 = require("class-variance-authority");
@@ -60,7 +61,7 @@ const toggleVariants = (0, class_variance_authority_1.cva)("inline-flex items-ce
 exports.toggleVariants = toggleVariants;
 const Toggle = React.forwardRef((_a, ref) => {
     var { className, variant, size } = _a, props = __rest(_a, ["className", "variant", "size"]);
-    return (React.createElement(TogglePrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)(toggleVariants({ variant, size, className })) }, props)));
+    return ((0, jsx_runtime_1.jsx)(TogglePrimitive.Root, Object.assign({ ref: ref, className: (0, utils_1.cn)(toggleVariants({ variant, size, className })) }, props)));
 });
 exports.Toggle = Toggle;
 Toggle.displayName = TogglePrimitive.Root.displayName;
