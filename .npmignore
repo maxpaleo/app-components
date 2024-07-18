@@ -1,0 +1,14 @@
+src/
+node_modules/
+tsconfig.json
+.github/
+.gitignore
+.npmignore
+media/
+public/
+lib/
+data/
+components/
+app/
+.next/
+components.json
