@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import React from "react";
 
 type SRInputLabelProps = {
@@ -8,7 +7,7 @@ type SRInputLabelProps = {
 
 const SRInputLabel: React.FC<SRInputLabelProps> = ({ blockId, label }) => {
   return (
-    <label htmlFor={cn("i-", blockId)} className="sr-only">
+    <label htmlFor={`i-${blockId}`} className="sr-only">
       {label}
     </label>
   );
