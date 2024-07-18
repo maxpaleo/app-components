@@ -1,6 +1,6 @@
 {
   "name": "@maxxp/app-components",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -82,5 +82,20 @@
     "lib": "lib"
   },
   "author": "Max Pauwels",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxpaleo/app-components.git"
+  },
+  "keywords": [
+    "components",
+    "next",
+    "components",
+    "shadcn",
+    "tailwind"
+  ],
+  "bugs": {
+    "url": "https://github.com/maxpaleo/app-components/issues"
+  },
+  "homepage": "https://github.com/maxpaleo/app-components#readme"
 }
