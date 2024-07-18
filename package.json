@@ -1,13 +1,13 @@
 {
   "name": "app-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "tsc",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "node createConfig.js"
+    "postinstall": "node src/createConfig.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
