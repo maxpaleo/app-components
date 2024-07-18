@@ -3,7 +3,7 @@ import SR from "./AppScreenReaders";
 import Icon from "lucide-icon-component";
 import { LucideIconNames } from "lucide-icon-component/build/lucide-icon-config";
 import { UserAccountTypes } from "@/app-config";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button, ButtonProps } from "./shadcn/button";
 
 export type AppButtonType = ButtonProps & {
   icon?: LucideIconNames;
