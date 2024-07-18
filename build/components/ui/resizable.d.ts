@@ -1,5 +1,5 @@
 import * as ResizablePrimitive from "react-resizable-panels";
-declare const ResizablePanelGroup: ({ className, ...props }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => import("react/jsx-runtime").JSX.Element;
+declare const ResizablePanelGroup: ({ className, ...props }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => import("react").JSX.Element;
 declare const ResizablePanel: import("react").ForwardRefExoticComponent<Omit<import("react").HTMLAttributes<keyof HTMLElementTagNameMap>, "id" | "onResize"> & {
     className?: string | undefined;
     collapsedSize?: number | undefined;
@@ -19,5 +19,5 @@ declare const ResizablePanel: import("react").ForwardRefExoticComponent<Omit<imp
 } & import("react").RefAttributes<ResizablePrimitive.ImperativePanelHandle>>;
 declare const ResizableHandle: ({ withHandle, className, ...props }: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
     withHandle?: boolean;
-}) => import("react/jsx-runtime").JSX.Element;
+}) => import("react").JSX.Element;
 export { ResizablePanelGroup, ResizablePanel, ResizableHandle };

@@ -1,1 +1,1 @@
-export declare function Toaster(): import("react/jsx-runtime").JSX.Element;
+export declare function Toaster(): import("react").JSX.Element;

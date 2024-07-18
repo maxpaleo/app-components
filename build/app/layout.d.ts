@@ -3,4 +3,4 @@ import "./globals.css";
 export declare const metadata: Metadata;
 export default function RootLayout({ children, }: Readonly<{
     children: React.ReactNode;
-}>): import("react/jsx-runtime").JSX.Element;
+}>): import("react").JSX.Element;

@@ -23,7 +23,7 @@ declare const ChartContainer: React.ForwardRefExoticComponent<Omit<React.ClassAt
 declare const ChartStyle: ({ id, config }: {
     id: string;
     config: ChartConfig;
-}) => import("react/jsx-runtime").JSX.Element | null;
+}) => React.JSX.Element | null;
 declare const ChartTooltip: typeof RechartsPrimitive.Tooltip;
 declare const ChartTooltipContent: React.ForwardRefExoticComponent<Omit<RechartsPrimitive.DefaultTooltipContentProps<import("recharts/types/component/DefaultTooltipContent").ValueType, import("recharts/types/component/DefaultTooltipContent").NameType> & {
     accessibilityLayer?: boolean;

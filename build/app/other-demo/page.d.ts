@@ -1,1 +1,1 @@
-export default function OtherDemoPage(): import("react/jsx-runtime").JSX.Element;
+export default function OtherDemoPage(): import("react").JSX.Element;
