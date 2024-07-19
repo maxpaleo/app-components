@@ -18,19 +18,26 @@ jobs:
           node-version: "21.4.0"
           registry-url: "https://registry.npmjs.org/"
 
+      - name: Change to src directory
+        run: cd src
+
       - name: Configure Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+        working-directory: ./src
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ./src
 
       - name: Clean dist directory
         run: rm -rf dist/*
+        working-directory: ./src
 
       - name: Compile TypeScript
         run: npm run build 
+        working-directory: ./src
 
       - name: NPM Whoami and Dry Run Publish
         run: |
@@ -38,6 +45,7 @@ jobs:
           npm publish --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./src
 
       - name: Build
         run: npm run build
@@ -46,3 +54,4 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./src

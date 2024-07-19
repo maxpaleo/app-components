@@ -1,0 +1,60 @@
+{
+  "name": "app-components",
+  "version": "0.1.14",
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsc",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "node build/createConfig.js"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "lucide-icon-component": "^1.0.6",
+    "lucide-react": "^0.408.0",
+    "react": "^18",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "class-variance-authority": "^0.7.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "react-dom": "^18",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "description": "A collection of dead simple essential components that will save you time and boilerplate code.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "Max Pauwels",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxpaleo/app-components.git"
+  },
+  "keywords": [
+    "components",
+    "next",
+    "components",
+    "shadcn",
+    "tailwind"
+  ],
+  "bugs": {
+    "url": "https://github.com/maxpaleo/app-components/issues"
+  },
+  "homepage": "https://github.com/maxpaleo/app-components#readme"
+}
