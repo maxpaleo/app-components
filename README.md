@@ -33,19 +33,17 @@ The shadcn button but with additional essential props.
 ```
 
 #### AppNavLink
-The shadcn button but with additional essential props.
-- \`loading\` to quickly set the button to a loading state with a spinner and disables the button.
-- \`icon\` autocompletes hundreds of icons from the [shadcn-icons](https://www.shadcn.com/icons.html) library. 
-- \`label\` to quickly set the button label. (You can also use regular children).
+The NextJs Link but with additional essential props.
+The link automatically shows as active when the current path is part of the href path.
+- \`href\`: This will autocomplete all your app paths, which you can set in the app-config.ts file.
+- \`as\` prop which can be set to \`button\` to wrap the link in a shadcn button.
+- \`customHref\`: This repaces the standard \`href\` prop, which is useful if you want to use a custom url for the link. You can also just use the Next  \`Link\` in this case.
 - ... All other shadcn button props.
 
-#### Additional props
-You'll need to set the role type in the app-config.ts file.
-- \`roleRestrictions\` An array of user roles that the button will only display for.
-- \`userRole\` set the current user's role from your state.
-
 ```tsx 
-<AppNavLink href="/demo">Dasboard</AppNavLink>
+<AppNavLink href="/demo">Dasboard</AppNavLink> // Regular link, will autocomplete your hrefs.
+<AppNavLink href="/demo" as="button">Dashboard</AppNavLink> // Button link, will autocomplete your hrefs.
+<AppNavLink href="/demo" customHref="/custom-url">Custom Url</AppNavLink> // Link with custom href, will not autocomplete your hrefs.
 ```
 
 ### Config file

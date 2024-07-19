@@ -22,6 +22,21 @@ const navigation_1 = require("next/navigation");
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
 const AppButton_1 = require("./AppButton");
 const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
+/**
+ * AppNavLink
+ * The NextJs Link component, but with an additional essential props.
+ * The link automatically shows as active when the current path is part of the href path.
+ * - `href`: This will autocomplete all your app paths, which you can set in the app-config.ts file.
+ * - `as` prop which can be set to `button` to wrap the link in a shadcn button.
+ * - `customHref`: This repaces the standard \`href\` prop, which is useful if you want to use a custom url for the link. You can also just use the Next  \`Link\` in this case.
+ * ---
+ * Example:
+ * ```tsx
+ * <AppNavLink href="/demo">Dasboard</AppNavLink> // Regular link, will autocomplete your hrefs.
+ * <AppNavLink href="/demo" as="button">Dashboard</AppNavLink> // Button link, will autocomplete your hrefs.
+ * <AppNavLink href="/demo" customHref="/custom-url">Custom Url</AppNavLink> // Link with custom href, will not autocomplete your hrefs.
+ * ```
+ */
 const AppNavLink = (_a) => {
     var { className, href, children, customHref, as = "link", icon, variant } = _a, rest = __rest(_a, ["className", "href", "children", "customHref", "as", "icon", "variant"]);
     const pathname = (0, navigation_1.usePathname)();

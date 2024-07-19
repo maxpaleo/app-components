@@ -19,6 +19,25 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const AppScreenReaders_1 = __importDefault(require("./AppScreenReaders"));
 const lucide_icon_component_1 = __importDefault(require("lucide-icon-component"));
 const button_1 = require("./shadcn/button");
+/**
+ * Appbutton
+ * A shadcn button with with additional essential props.
+ * - `loading` to quickly set the button to a loading state with a spinner and disables the button.
+ * - `icon` autocompletes hundreds of icons from the [shadcn-icons](https://www.shadcn.com/icons.html) library.
+ * - `label` to quickly set the button label. (You can also use regular children).
+ * - ... All other shadcn button props.
+ *
+ * ---
+ * Example:
+ * ```tsx
+ * <AppButton
+  label="Test"
+  loading
+  icon="alarm-clock"
+  variant="destructive"
+/>
+ * ```
+ */
 const AppButton = (_a) => {
     var { icon, loading = false, size, children, disabled, label, screenReaderText, roleRestrictions, userRole, asChild } = _a, rest = __rest(_a, ["icon", "loading", "size", "children", "disabled", "label", "screenReaderText", "roleRestrictions", "userRole", "asChild"]);
     const selectedIcon = icon;

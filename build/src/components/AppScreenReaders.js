@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
-const utils_1 = require("@/lib/utils");
 const SRInputLabel = ({ blockId, label }) => {
-    return ((0, jsx_runtime_1.jsx)("label", { htmlFor: (0, utils_1.cn)("i-", blockId), className: "sr-only", children: label }));
+    return ((0, jsx_runtime_1.jsx)("label", { htmlFor: `i-${blockId}`, className: "sr-only", children: label }));
 };
 const SRButton = ({ label, onClick }) => {
     return ((0, jsx_runtime_1.jsx)("button", { onClick: onClick, className: "sr-only", "aria-label": `${label} button`, children: label }));
